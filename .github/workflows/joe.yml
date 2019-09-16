@@ -1,0 +1,37 @@
+name: Azure Pages CI
+
+
+
+on: [push, pull_request]
+
+
+
+jobs:
+
+  azure_pages_job:
+
+    runs-on: ubuntu-latest
+
+    name: Build And Deploy
+
+    steps:
+
+    - uses: actions/checkout@v1
+
+    - name: Build And Deploy
+
+      id: azurepagesbuilddeploy
+
+      uses: miwebst/basic-deploy-task@master
+
+      with:
+
+        azure_pages_buildhost: 'staticsitesbuilder.azurewebsites.net'
+
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
+
+        app_build_output_location: 'build'
+
+        app_source_location: 'app' # optional
+
+        azure_function_location: 'api' # optional
