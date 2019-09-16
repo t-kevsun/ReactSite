@@ -12,7 +12,7 @@ jobs:
       id: azurepagesbuilddeploy
       uses: miwebst/basic-deploy-task@master
       with:
-        azure_pages_buildhost: 'testuploadfile20190910120552.azurewebsites.net'
+        azure_pages_buildhost: 'staticsitesbuilder.azurewebsites.net'
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
         app_build_output_location: 'build'
         app_source_location: 'app' # optional
