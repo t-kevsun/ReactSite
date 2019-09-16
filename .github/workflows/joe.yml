@@ -22,7 +22,7 @@ jobs:
 
       id: azurepagesbuilddeploy
 
-      uses: miwebst/basic-deploy-task@master
+      uses: joslinmicrosoft/basic-deploy-task@master
 
       with:
 
