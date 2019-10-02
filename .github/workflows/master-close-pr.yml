@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Close Pull Request
     steps:
-    - uses: actions/checkout@v1
     - name: Close Pull Request
       id: azurepagesclosepullrequest
       uses: joslinmicrosoft/close-pull-request-task@master
