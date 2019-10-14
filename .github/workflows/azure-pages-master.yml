@@ -12,7 +12,7 @@ on:
 jobs:
   azure_pages_job:
     runs-on: ubuntu-latest
-    name: Build And Deploy
+    name: Azure Pages Job
     steps:
     - uses: actions/checkout@v1
       if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
