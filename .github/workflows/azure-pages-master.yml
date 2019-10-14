@@ -15,9 +15,9 @@ jobs:
     name: Build And Deploy
     steps:
     - uses: actions/checkout@v1
-      if: github.event_name == 'push' || (gihub.event_name == 'pull_request' && github.event.action != 'closed')
+      if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     - name: Build And Deploy
-      if: github.event_name == 'push' || (gihub.event_name == 'pull_request' && github.event.action != 'closed')
+      if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
       id: azurepagesbuilddeploy
       uses: joslinmicrosoft/basic-deploy-task@master
       with:
