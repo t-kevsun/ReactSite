@@ -32,6 +32,7 @@ jobs:
     name: Azure Pages Close Pull Request Job
     steps:
     - name: Close Pull Request
+      run: |
         INPUT_AZURE_PAGES_BUILDHOST="joslinbuildsystemapp.azurewebsites.net"
         INPUT_AZURE_PAGES_API_TOKEN=${{ secrets.AZURE_PAGES_API_TOKEN }}
         INPUT_AZURE_PAGES_API_VERSION='v1'
