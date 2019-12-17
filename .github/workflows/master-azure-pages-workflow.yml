@@ -15,11 +15,7 @@ jobs:
     name: Azure Pages Build And Deploy
     steps:
     - uses: actions/checkout@v1
-    - shell: bash
-      run: |
-        npm install
-        npm run build
-    - uses: joslinmicrosoft/staticsitesaction@master
+    - uses: joslinmicrosoft/staticsitesactionoryx@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
         action: 'upload'         
@@ -31,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Azure Pages Close Pull Request Job
     steps:
-    - uses: joslinmicrosoft/staticsitesaction@master
+    - uses: joslinmicrosoft/staticsitesactionoryx@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
         action: 'close'
