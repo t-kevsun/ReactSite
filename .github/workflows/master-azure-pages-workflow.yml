@@ -1,33 +1,39 @@
 name: Azure Pages CI
+
 on:
   push:
     branches:
     - master
   pull_request:
-    types: [opened, synchronize, reopened, edited, closed]
+    types: [opened, synchronize, reopened, closed]
     branches:
     - master
 
 jobs:
-  azure_pages_build_and_upload_job:
+  azure_pages_build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    name: Azure Pages Build And Deploy
+    name: Azure Pages Build and Deploy Job
     steps:
     - uses: actions/checkout@v1
-    - uses: joslinmicrosoft/staticsitesactionoryx@master
+    - name: Build And Deploy
+      id: azurepagesbuilddeploy
+      uses: joslinmicrosoft/staticsitesactionoryx@master
       with:
-        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
-        action: 'upload'         
-        app_artifact_location: 'app'
-        api_artifact_location: 'api'
-  
-  azure_pages_close_pr_job:
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_MASTER }}
+        action: 'upload'
+        app_source_location: 'app' # optional
+        api_source_location: 'api' # optional
+        app_artifact_location: 'build'
+  azure_pages_close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
     name: Azure Pages Close Pull Request Job
     steps:
-    - uses: joslinmicrosoft/staticsitesactionoryx@master
+    - uses: actions/checkout@v1
+    - name: Close Pull Request
+      id: azurepagesclosepullrequest
+      uses: joslinmicrosoft/staticsitesactionoryx@master
       with:
-        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_MASTER }}
         action: 'close'
