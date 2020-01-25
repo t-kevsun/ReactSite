@@ -22,8 +22,8 @@ jobs:
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_KIND_COAST_06C44FEF }}
         action: 'upload'
-        app_source_location: 'app' # App Content Path
-        api_source_location: 'api' # Api Content Path - optional
+        app_artifact_location: 'app' # App Content Path
+        api_artifact_location: 'api' # Api Content Path - optional
 
   azure_pages_close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
