@@ -21,7 +21,7 @@ jobs:
       uses: joslinmicrosoft/staticsitesactionoryx@joslin
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_WHITE_RIVER_042BC75F }}
-        action: 'upload'
+        action: 'upload --verbose=true'
         app_artifact_location: 'app' # App Content Path
         api_artifact_location: 'api' # Api Content Path - optional
 
