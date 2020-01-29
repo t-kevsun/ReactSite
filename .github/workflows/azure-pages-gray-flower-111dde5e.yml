@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build And Deploy
       id: azurepagesbuilddeploy
-      uses: joslinmicrosoft/staticsitesactionoryx@sscanary
+      uses: joslinmicrosoft/staticsitesactionoryx@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_GRAY_FLOWER_111DDE5E }}
         action: 'upload --verbose=true'
@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Close Pull Request
       id: azurepagesclosepullrequest
-      uses: joslinmicrosoft/staticsitesaction@sscanary
+      uses: joslinmicrosoft/staticsitesaction@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_GRAY_FLOWER_111DDE5E }}
         action: 'close'
