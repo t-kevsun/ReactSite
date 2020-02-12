@@ -18,11 +18,11 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build And Deploy
       id: builddeploy
-      uses: joslinmicrosoft/staticsitesactionoryx@master
+      uses: joslinmicrosoft/staticsitesactionoryx@joslin
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_YELLOW_SMOKE_0347132F }}
         action: 'upload'
-        app_artifact_location: 'xlayers' # App Content Path
+        app_artifact_location: 'app' # App Content Path
         api_artifact_location: 'api' # Api Content Path - optional
 
   close_pull_request_job:
@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Close Pull Request
       id: closepullrequest
-      uses: joslinmicrosoft/staticsitesaction@master
+      uses: joslinmicrosoft/staticsitesaction@joslin
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_YELLOW_SMOKE_0347132F }}
         action: 'close'
