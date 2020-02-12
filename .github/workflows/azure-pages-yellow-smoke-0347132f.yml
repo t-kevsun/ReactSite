@@ -1,0 +1,38 @@
+name: Azure Pages CI/CD
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+    - master
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build And Deploy
+      id: builddeploy
+      uses: joslinmicrosoft/staticsitesactionoryx@master
+      with:
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_YELLOW_SMOKE_0347132F }}
+        action: 'upload'
+        app_artifact_location: 'xlayers' # App Content Path
+        api_artifact_location: 'api' # Api Content Path - optional
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+    - name: Close Pull Request
+      id: closepullrequest
+      uses: joslinmicrosoft/staticsitesaction@master
+      with:
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_YELLOW_SMOKE_0347132F }}
+        action: 'close'
