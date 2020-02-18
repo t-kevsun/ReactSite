@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build And Deploy
       id: builddeploy
-      uses: 
+      uses: joslinmicrosoft/staticsitesactionoryx@joslin
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_NICE_GROUND_08FA64CF }}
         action: 'upload'
