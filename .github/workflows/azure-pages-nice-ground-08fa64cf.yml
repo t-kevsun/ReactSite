@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Close Pull Request
       id: closepullrequest
-      uses: 
+      uses: joslinmicrosoft/staticsitesaction@joslin
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_NICE_GROUND_08FA64CF }}
         action: 'close'
