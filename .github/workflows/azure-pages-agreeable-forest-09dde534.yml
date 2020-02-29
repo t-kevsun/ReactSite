@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build And Deploy
       id: builddeploy
-      uses: joslinmicrosoft/staticsitesactionoryx@canary2
+      uses: joslinmicrosoft/staticsitesactionoryx@canary3
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_AGREEABLE_FOREST_09DDE534 }}
         action: 'upload'
