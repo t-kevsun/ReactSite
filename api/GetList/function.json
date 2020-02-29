@@ -9,7 +9,7 @@
         "get",
         "post"
       ],
-	  "route": "GetList"
+	  "route": "products/{category:alpha}/{id:int?}"
     },
     {
       "type": "http",
