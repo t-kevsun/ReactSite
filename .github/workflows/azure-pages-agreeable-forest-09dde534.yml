@@ -21,7 +21,7 @@ jobs:
       uses: joslinmicrosoft/staticsitesactionoryx@canary3
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_AGREEABLE_FOREST_09DDE534 }}
-        action: 'upload'
+        action: 'upload --verbose'
         app_location: 'app' # App Source Code Path
         api_location: 'api' # Api Source Code Path - optional
         app_artifact_location: '' # Built App Content Directory - optional
