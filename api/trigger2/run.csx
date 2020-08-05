@@ -16,7 +16,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     name = name ?? data?.name;
 
     string responseMessage = string.IsNullOrEmpty(name)
-        ? "2nd HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
+        ? "3nd HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
                 : $"Hello, {name}. This C# HTTP triggered function executed successfully.";
 
             return new OkObjectResult(responseMessage);
