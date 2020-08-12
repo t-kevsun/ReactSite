@@ -10,15 +10,18 @@
     },
     {
       "route": "/api/discounts",
-      "allowedRoles": ["preferred"]
+      "allowedRoles": [ "authenticated" ]
+      // "allowedRoles": ["preferred"]
     },
     {
       "route": "/api/x/*",
-      "allowedRoles": ["preferred"]
+      "allowedRoles": [ "authenticated" ]
+      // "allowedRoles": ["preferred"]
     },
     {
       "route": "/api/*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": [ "anonymous" ]
+      // "allowedRoles": ["authenticated"]
     },
     {
       "route": "/*",
