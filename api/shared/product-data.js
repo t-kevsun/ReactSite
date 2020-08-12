@@ -15,7 +15,7 @@ const data = {
     {
       id: 30,
       name: 'Apples',
-      description: 'Bag of 7 fresh McIntosh apples',
+      description: 'Bag of 7 fresh apples',
       quantity: 1,
     },
   ],
