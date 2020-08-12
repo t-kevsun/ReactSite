@@ -22,7 +22,7 @@ jobs:
         id: builddeploy
         uses: t-kevsun/anotherdeploy@master
         env:
-          API_KIND: "app"
+          API_KIND: "app"
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_HAPPY_ISLAND_07DEC9B1E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
