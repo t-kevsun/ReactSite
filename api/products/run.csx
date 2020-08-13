@@ -26,7 +26,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     data3.description = "testfunction.scm.tkevsunstamp.antares-test.windows-int.net (Managed, RUN_FROM_PACKAGE)";
     data3.quantity = 1;
 
-    var arr = new Product[] { data, data2, data3 };
+    var arr = new Product[] { data1, data2, data3 };
  
     var json = JsonConvert.SerializeObject(arr, Formatting.Indented);
      
