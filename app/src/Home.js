@@ -17,10 +17,10 @@ const Home = () => (
             My List
           </a>
         </button>
-        <button className="button" aria-label="My Discounts">
-          <a href="/discounts">
+        <button className="button" aria-label="Bring Your Own Webapp">
+          <a href="/api/index.html">
             <i className="fas fa-money-bill-alt"></i>
-            My Discounts
+            Random Webapp
           </a>
         </button>
         <button className="button" aria-label="My Discounts">
