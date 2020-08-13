@@ -18,9 +18,9 @@ const Home = () => (
           </a>
         </button>
         <button className="button" aria-label="Bring Your Own Webapp">
-          <a href="/api/index.html">
+          <a href="/api">
             <i className="fas fa-money-bill-alt"></i>
-            Random Webapp Api
+            Webapp Api
           </a>
         </button>
         <button className="button" aria-label="My Discounts">
